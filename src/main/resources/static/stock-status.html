@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Durumu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Font Awesome Kütüphanesi -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <div>
+        <button onclick="window.location.href='main.html';">
+            <i class="fas fa-warehouse"></i> Stock Management
+        </button>
+    </div>
+    <div>
+        <button id="productManagementButton">Ürün Yönetimi</button>
+        <button id="stockStatusButton">Stok Durumu</button>
+        <button id="OrderButton">Satış Yönetimi</button>
+        <!-- Diğer navbar öğeleri -->
+    </div>
+</div>
+<div id="add-category-form">
+    <h3>Yeni Kategori Ekle</h3>
+    <form id="newCategoryForm">
+        <input type="text" id="newCategoryName" placeholder="Kategori Adı" required>
+        <input type="text" id="newCategoryDescription" placeholder="Açıklama">
+        <button type="submit">Kategori Ekle</button>
+    </form>
+</div>
+
+<div id="stock-status-container">
+    <h1>Stok Durumu Analizi</h1>
+    <div class="charts-container">
+        <div class="chart" id="barChartContainer"></div>
+        <div class="chart" id="pieChartContainer"></div>
+    </div>
+</div>
+
+
+
+<script src="main.js"></script>
+<script src="stock-status.js"></script>
+</body>
+</html>

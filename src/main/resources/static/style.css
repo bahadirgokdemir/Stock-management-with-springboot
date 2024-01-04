@@ -1,0 +1,499 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar {
+    background-color: rgb(19, 30, 128);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar button:hover {
+    background-color: rgba(0, 123, 255, 0.54);
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label, .form-group input, .form-group select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+/* Düğme stilleri için eklemeler */
+.edit-btn {
+    background-color: #ffc107;
+    color: black;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+/* Edit Modal Özel Stilleri */
+#editModal {
+    animation: fadeInModal 0.5s;
+}
+
+@keyframes fadeInModal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-content:hover {
+    transform: scale(1.05);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #222;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Sipariş Oluştur Modal Özel Stilleri */
+#orderModal {
+    animation: fadeInModal 0.5s;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-content:hover {
+    transform: scale(1.05);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #222;
+}
+
+#orderForm label {
+    font-weight: bold;
+}
+
+#orderForm input[type="text"],
+#orderForm input[type="number"],
+#orderForm input[type="date"],
+#orderForm select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#orderForm input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+#orderForm input[type="submit"]:hover {
+    background-color: #007bff;
+}
+
+/* Butonların genel stilini ayarlar */
+#createOrderButton, #OrderHistoryButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
+}
+
+#createOrderButton:hover, #OrderHistoryButton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.div {
+    display: flex;
+    justify-content: center;
+}
+
+#add-category-form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-category-form h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#add-category-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#newCategoryForm input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#newCategoryForm button {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#newCategoryForm button:hover {
+    background-color: #007bff;
+}
+
+#stock-status-container {
+    padding: 20px;
+    margin: 20px auto;
+    width: 95%; /* Genişlik */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+#stock-status-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#stock-status-table {
+    width: 110%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#stock-status-table, #stock-status-table th, #stock-status-table td {
+    border: 1px solid #ddd;
+}
+
+#stock-status-table th, #stock-status-table td {
+    text-align: left;
+    padding: 10px;
+}
+
+#stock-status-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+#stock-status-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#product-list {
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%; /* Genişlik */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#product-list h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#productsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#productsTable, #productsTable th, #productsTable td {
+    border: 1px solid #ddd;
+}
+
+#productsTable th, #productsTable td {
+    text-align: left;
+    padding: 10px;
+}
+
+#productsTable th {
+    background-color: #007bff;
+    color: white;
+}
+
+#productsTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#productsTable th:last-child {
+    width: 150px;
+}
+/* Ürün Ekle/Düzenle Formu için Genel Stil */
+#product-form {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#product-form h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+#addEditProductForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+#addEditProductForm input[type="text"],
+#addEditProductForm input[type="number"],
+#addEditProductForm select {
+    flex: 1 1 200px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#addEditProductForm button {
+    background-color:  #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+#addEditProductForm button i {
+    margin-right: 5px;
+}
+
+#addEditProductForm button:hover {
+    background-color: #001bff;
+}
+
+@media (max-width: 600px) {
+    #addEditProductForm {
+        flex-direction: column;
+    }
+}
+h2 {
+    padding: 10px 20px;
+    margin-left: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.charts-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.chart {
+    flex: 1;
+    padding: 10px;
+}
+
+
+

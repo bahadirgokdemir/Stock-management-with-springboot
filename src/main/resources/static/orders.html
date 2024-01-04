@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Font Awesome Kütüphanesi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <div>
+        <button onclick="window.location.href='main.html';">
+            <i class="fas fa-warehouse"></i> Stock Management
+        </button>
+    </div>
+    <div>
+        <button id="productManagementButton">Ürün Yönetimi</button>
+        <button id="stockStatusButton">Stok Durumu</button>
+        <button id="OrderButton">Satış Yönetimi</button>
+    </div>
+</div>
+
+<div>
+    <div>
+        <button id="createOrderButton">Sipariş Oluştur</button>
+        <button id="OrderHistoryButton">Teslim Edilen Siparişler</button>
+    </div>
+    <table id="ordersTable">
+        <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Miktar</th>
+            <th>Birim Fiyatı</th>
+            <th>Toplam Satış</th>
+            <th>Teslimat Firması</th>
+            <th>Teslim Tarihi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Veriler buraya eklenecek -->
+        </tbody>
+    </table>
+</div>
+<!-- Teslim Edilen Siparişler Modalı -->
+<div id="orderHistoryModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeEditModal()">&times;</span>
+        <h2>Teslim Edilen Siparişler</h2>
+        <table id="deliveredOrdersTable">
+            <thead>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Miktar</th>
+                <th>Teslimat Firması</th>
+                <th>Teslim Tarihi</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Teslim edilen siparişler buraya eklenecek -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Sipariş Oluştur Modalı -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Yeni Sipariş Oluştur</h2>
+        <div id="productsList">
+            <!-- Ürünler burada listelenecek -->
+        </div>
+        <form id="orderForm">
+            <label for="selectedProduct">Ürün Seç:</label>
+            <select id="selectedProduct" name="selectedProduct">
+                <!-- Ürün seçenekleri burada eklenecek -->
+            </select>
+            <label for="deliveryCompany">Teslim Edilecek Firma:</label>
+            <input type="text" id="deliveryCompany" name="deliveryCompany">
+            <label for="deliveryDate">Teslim Tarihi:</label>
+            <input type="date" id="deliveryDate" name="deliveryDate">
+            <label for="quantity">Miktar:</label>
+            <input type="number" id="quantity" name="quantity">
+            <label for="pricePerUnit">Birim Fiyatı:</label>
+            <input type="number" id="pricePerUnit" name="pricePerUnit" step="0.01">
+            <input type="submit" value="Sipariş Oluştur">
+        </form>
+    </div>
+</div>
+
+
+</div>
+
+<script src="orders.js"></script>
+</body>
+</html>

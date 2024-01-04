@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Font Awesome Kütüphanesi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <div>
+        <button onclick="window.location.href='index.html';">
+            <i class="fas fa-warehouse"></i> Stock Management
+        </button>
+    </div>
+    <div>
+        <a href="register.html">Kayıt Ol</a>
+        <a href="login.html">Giriş Yap</a>
+    </div>
+</div>
+<div class="container">
+    <h2>Kayıt Ol</h2>
+    <form id="registerForm" class="form-group">
+        <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+        <input type="password" id="password" placeholder="Şifre" required>
+        <input type="email" id="email" placeholder="E-posta" required>
+        <input type="text" id="phoneNumber" placeholder="Telefon Numarası">
+        <input type="text" id="companyName" placeholder="Şirket Adı">
+        <button type="submit">Kayıt Ol</button>
+    </form>
+</div>
+<script src="register.js"></script>
+</body>
+</html>
